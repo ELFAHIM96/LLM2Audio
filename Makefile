@@ -14,10 +14,11 @@ initialize:
 push:
 	echo "pushing ..."
 	git add .
-	git commit -m $(var)
+	git commit -m "hi"
 	git push -u origin main
 readme:
 	@echo "Adding README.md to the repository..."
+	touch README.md
 	git add README.md
 	git commit -m "Add README.md"
 	git push -u origin main
