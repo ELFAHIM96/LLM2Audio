@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Initialize ElevenLabs and Ollama
 client = ElevenLabs()
 cached_llm = Ollama(model="llama3")
-
+# llm 
 @app.route('/llm', methods=['POST'])
 def ask():
     data = request.json
@@ -34,7 +34,7 @@ def ask():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
+#play
 @app.route('/play', methods=['POST'])
 def play_audio():
     data = request.json
@@ -55,8 +55,10 @@ def play_audio():
 
 def start_app():
     app.run(host="0.0.0.0", port=5000, debug=True)
+# main
 
 if __name__ == "__main__":
     start_app()
+
 
 
